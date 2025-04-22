@@ -10,7 +10,6 @@ import {
   MdOutlineLoop,
 } from "react-icons/md";
 import { getCurrentUser, LogOut } from "../../../redux/slice/AuthSlice";
-import { set } from "date-fns";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -98,26 +97,26 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <div className="flex items-center gap-5 border border-red-500">
+      <div className="flex items-center border border-red-500">
         {/* <MdNotificationsNone className='text-[25px]' /> */}
         {/* <MdOutlineControlCamera className='text-[25px]' />
         <MdSearch className='text-[25px]' /> */}
         <Button
+          className="text-center"
           onClick={() => setOpen(!open)}
           icon={<MdNotificationsNone />}
         ></Button>
 
         <div className='flex items-center"'>
           {isLogin ? (
-            <div className="w-[30px] h-[30px] rounded-full cursor-pointer">
-              <Dropdown
-                menu={{ items }}
-                className="sm:relative sm:right-11 "
-                placement="bottomRight"
-              >
-                <a onClick={(e) => e.preventDefault()}>
+            <div className="w-[32px] h-[32px] rounded-full cursor-pointer">
+              <Dropdown menu={{ items }} className="" placement="bottomRight">
+                <a
+                  onClick={(e) => e.preventDefault()}
+                  className="w-full h-full"
+                >
                   <img
-                    className="w-full h-full  object-cover object-center"
+                    className="w-full h-full object-cover object-center "
                     src={
                       currentUser?.avatar?.[0]?.url ||
                       "https://cdn.kona-blue.com/upload/kona-blue_com/post/images/2024/09/18/457/avatar-mac-dinh-9.jpg"
